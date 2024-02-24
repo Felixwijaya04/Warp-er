@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     public float JumpPower = 8f;
     private float horizontal;
     public GameObject SwapWith;
-    public Vector3 tempPosition;
+    public Vector2 tempPosition;
     public GameObject PlayerPosition;
     [SerializeField] private Rigidbody2D rb;
     void Start()
