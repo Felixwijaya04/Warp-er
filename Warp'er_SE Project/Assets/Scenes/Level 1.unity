@@ -731,6 +731,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpPower: 8
+  SwapWith: {fileID: 322412276}
+  tempPosition: {x: 0, y: 0}
   rb: {fileID: 1522530882}
 --- !u!1001 &8648511702437754696
 PrefabInstance:
