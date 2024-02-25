@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &24478836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24478837}
+  m_Layer: 0
+  m_Name: GrabPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &24478837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24478836}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1522530885}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &322412276
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,9 +167,9 @@ GameObject:
   - component: {fileID: 322412278}
   - component: {fileID: 322412277}
   - component: {fileID: 322412281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BOX
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +390,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.06879
+  orthographic size: 11.55
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -463,7 +494,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1522530885}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8.06879
+    OrthographicSize: 11.55
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -597,6 +628,7 @@ GameObject:
   - component: {fileID: 1522530883}
   - component: {fileID: 1522530882}
   - component: {fileID: 1522530886}
+  - component: {fileID: 1522530887}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -730,7 +762,8 @@ Transform:
   m_LocalPosition: {x: -1.85, y: -3.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 24478837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1522530886
@@ -751,6 +784,21 @@ MonoBehaviour:
   tempPosition: {x: 0, y: 0}
   PlayerPosition: {fileID: 1522530881}
   rb: {fileID: 1522530882}
+--- !u!114 &1522530887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522530881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e597223dc773ce45aa0141d180fad05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxHolder: {fileID: 24478837}
+  box: {fileID: 322412280}
+  range: 3
 --- !u!1001 &8648511702437754696
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject SwapWith;
     public Vector2 tempPosition;
     public GameObject PlayerPosition;
+    private bool isFacingRight = true;
     [SerializeField] private Rigidbody2D rb;
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -29,6 +30,14 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             swap();
+        }
+        if (mousePos.x > transform.position.x && !isFacingRight)
+        {
+            flip();
+        }
+        else if (mousePos.x < transform.position.x && isFacingRight)
+        {
+            flip();
         }
     }
 
@@ -46,5 +55,15 @@ public class PlayerScript : MonoBehaviour
         tempPosition = PlayerPosition.transform.position;
         PlayerPosition.transform.position = SwapWith.transform.position;
         SwapWith.transform.position = tempPosition;
+    }
+
+    private void flip()
+    {
+        isFacingRight = !isFacingRight;
+        transform.Rotate(0f, 180f, 0f);
+        /*Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;*/
+
     }
 }
