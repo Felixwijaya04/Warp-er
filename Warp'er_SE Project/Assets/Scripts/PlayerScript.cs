@@ -12,11 +12,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject PlayerPosition;
     private bool isFacingRight = true;
     [SerializeField] private Rigidbody2D rb;
-    void Start()
-    {
-        
-    }
-
+   
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +23,7 @@ public class PlayerScript : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             swap();
         }

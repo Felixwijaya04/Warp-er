@@ -6,7 +6,7 @@ using UnityEngine;
 public class GrabScript : MonoBehaviour
 {
     public Transform boxHolder;
-    private bool isHolding = false;
+    public static bool isHolding = false;
     [SerializeField] Transform box;
     [SerializeField] float range;
 
