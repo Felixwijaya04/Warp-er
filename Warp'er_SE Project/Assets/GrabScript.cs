@@ -10,11 +10,6 @@ public class GrabScript : MonoBehaviour
     [SerializeField] Transform box;
     [SerializeField] float range;
 
-
-    private void Start()
-    {
-        
-    }
     // Update is called once per frame
     void Update()
     {
