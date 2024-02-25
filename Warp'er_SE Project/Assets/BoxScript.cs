@@ -12,7 +12,11 @@ public class BoxScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            rb.velocity = new Vector2(xForce, yForce);
+            projectile();
         }    
     }
+    public void projectile() {
+        rb.velocity = new Vector2(xForce, yForce);
+    }
+
 }
