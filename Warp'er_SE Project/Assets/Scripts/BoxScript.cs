@@ -20,6 +20,7 @@ public class BoxScript : MonoBehaviour
                 GetComponent<Rigidbody2D>().simulated = true;
             }
             rb.velocity = new Vector2(direction.x * force, direction.y * force);
+            GrabScript.isHolding = false;
         }
     }
 
