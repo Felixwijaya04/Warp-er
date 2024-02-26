@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     public Vector2 tempPosition;
     public GameObject PlayerPosition;
     private bool isFacingRight = true;
+    private bool isDropping = false;
     [SerializeField] private Rigidbody2D rb;
    
     // Update is called once per frame
@@ -19,10 +20,11 @@ public class PlayerScript : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && isDropping == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
+        // swap with object
         if (Input.GetKeyDown(KeyCode.E))
         {
             swap();
@@ -34,6 +36,17 @@ public class PlayerScript : MonoBehaviour
         else if (mousePos.x < transform.position.x && isFacingRight)
         {
             flip();
+        }
+        // drop down in platform
+        if(Input.GetKey(KeyCode.S))
+        {
+            Physics2D.IgnoreLayerCollision(8, 7, true);
+            isDropping = true;
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(8, 7, false);
+            isDropping = false;
         }
     }
 
