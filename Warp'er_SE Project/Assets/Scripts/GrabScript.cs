@@ -19,21 +19,21 @@ public class GrabScript : MonoBehaviour
         if (distance < range)
         {
             // validasi dulu apakah swap quota tersedia atau tidak
-            if(Input.GetKeyDown(KeyCode.Q) && PlayerScript.SwapQuota == true)
+            /*if (Input.GetKeyDown(KeyCode.Q) && PlayerScript.SwapQuota == true)
             {
                 // jika tersedia maka swap quota skrg habis dan object ini bisa untuk swap diri
                 PlayerScript.SwapQuota = false;
                 _thisObjPaired = true;
             }
-            else if(Input.GetKeyDown(KeyCode.Q) && PlayerScript.SwapQuota == false)
+            else if (Input.GetKeyDown(KeyCode.Q) && PlayerScript.SwapQuota == false)
             {
                 // swap quota tersedia lagi
                 PlayerScript.SwapQuota = true;
                 _thisObjPaired = false;
-            }
+            }*/
 
 
-            if (Input.GetMouseButtonDown(1) && isHolding == false && _thisObjPaired == true)
+            if (Input.GetMouseButtonDown(1) && isHolding == false)
             {
                 box.transform.position = boxHolder.position;
                 box.transform.parent = transform;
@@ -43,7 +43,7 @@ public class GrabScript : MonoBehaviour
                     box.GetComponent<Rigidbody2D>().simulated = false;
                 }
             }
-            else if (Input.GetMouseButtonDown(1) && isHolding == true && _thisObjPaired == true)
+            else if (Input.GetMouseButtonDown(1) && isHolding == true)
             {
                 isHolding = false;
                 box.transform.parent = null;

@@ -14,6 +14,7 @@ public class Barrel : MonoBehaviour
         // code buat throw obj
         if (Input.GetMouseButtonDown(0) && GrabScript.isHolding == true)
         {
+            
             transform.parent = null;
             if (GetComponent<Rigidbody2D>())
             {
