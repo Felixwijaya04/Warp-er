@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - Door
+  - SwappableObject
   layers:
   - Default
   - TransparentFX

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class BoxScript : MonoBehaviour
+public class Barrel : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] float force;
@@ -24,5 +23,4 @@ public class BoxScript : MonoBehaviour
             GrabScript.isHolding = false;
         }
     }
-
 }

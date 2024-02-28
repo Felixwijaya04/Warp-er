@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject PlayerPosition;
     private bool isFacingRight = true;
     private bool isDropping = false;
+    public static bool SwapQuota = true;
     [SerializeField] private Rigidbody2D rb;
    
     // Update is called once per frame
