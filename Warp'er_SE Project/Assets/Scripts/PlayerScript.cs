@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
         // swap with object
-        if (Input.GetKeyDown(KeyCode.E) && GrabScript.isHolding == false)
+        if (Input.GetKeyDown(KeyCode.E))
         {
             swap();
         }
@@ -71,9 +71,5 @@ public class PlayerScript : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
-        /*Vector3 localScale = transform.localScale;
-        localScale.x *= -1f;
-        transform.localScale = localScale;*/
-
     }
 }
