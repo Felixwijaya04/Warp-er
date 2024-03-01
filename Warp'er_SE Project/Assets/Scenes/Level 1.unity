@@ -1172,9 +1172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51cacdeb4bfae34895aa38eea1c30b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pendantHolder: {fileID: 0}
-  pendant: {fileID: 0}
-  force: 0
+  pendantHolder: {fileID: 1370853148}
+  pendant: {fileID: 572044040}
+  force: 20
+  range: 0
 --- !u!1 &589511170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,7 +2536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxHolder: {fileID: 24478837}
+  pendantHolder: {fileID: 1370853148}
   box: {fileID: 322412280}
+  pendant: {fileID: 572044042}
   range: 3
 --- !u!95 &1522530888
 Animator:

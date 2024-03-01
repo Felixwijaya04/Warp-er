@@ -6,14 +6,18 @@ using UnityEngine;
 public class GrabScript : MonoBehaviour
 {
     public Transform boxHolder;
+    public Transform pendantHolder;
     public static bool isHolding = false;
+    public static bool isHoldingPendant = true;
     [SerializeField] Transform box;
+    [SerializeField] Transform pendant;
     [SerializeField] float range;
 
     // Update is called once per frame
     void Update()
     {
         float distance = Vector2.Distance(transform.position, box.position);
+        float PendantDist = Vector2.Distance(transform.position, pendant.position);
         Debug.Log(distance);
         if (distance < range)
         {
@@ -27,7 +31,8 @@ public class GrabScript : MonoBehaviour
                     box.GetComponent<Rigidbody2D>().simulated = false;
                 }
             }
-            else if (Input.GetMouseButtonDown(1) && isHolding == true)
+            // pendantDist > range agar input box dan pendant ga ke run bersamaan
+            else if (Input.GetMouseButtonDown(1) && isHolding == true && PendantDist > range)
             {
                 isHolding = false;
                 box.transform.parent = null;
@@ -36,6 +41,21 @@ public class GrabScript : MonoBehaviour
                     box.GetComponent<Rigidbody2D>().simulated = true;
                 }
             }
+        }
+
+        if (PendantDist < range)
+        {
+            if (Input.GetMouseButtonDown(1) && isHoldingPendant == false)
+            {
+                pendant.transform.position = pendantHolder.position;
+                pendant.transform.parent = pendantHolder;
+                if (pendant.GetComponent<Rigidbody2D>())
+                {
+                    pendant.GetComponent<Rigidbody2D>().simulated = false;
+                }
+                isHoldingPendant = true;
+            }
+            
         }
     }
 }
