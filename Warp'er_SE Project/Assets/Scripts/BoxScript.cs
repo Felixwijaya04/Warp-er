@@ -10,19 +10,23 @@ public class BoxScript : MonoBehaviour
     private Vector2 direction;
     void Update()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        direction = (mousePosition - transform.position).normalized;
-        // code buat throw obj
-        if (Input.GetMouseButtonDown(0) && GrabScript.isHolding == true)
+        if (GrabScript.isHoldingPendant == false && GrabScript.isHolding == true)
         {
-            transform.parent = null;
-            if (GetComponent<Rigidbody2D>())
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            direction = (mousePosition - transform.position).normalized;
+            // code buat throw obj
+            if (Input.GetMouseButtonDown(0))
             {
-                GetComponent<Rigidbody2D>().simulated = true;
+                transform.parent = null;
+                if (GetComponent<Rigidbody2D>())
+                {
+                    GetComponent<Rigidbody2D>().simulated = true;
+                }
+                rb.velocity = new Vector2(direction.x * force, direction.y * force);
+                GrabScript.isHolding = false;
             }
-            rb.velocity = new Vector2(direction.x * force, direction.y * force);
-            GrabScript.isHolding = false;
         }
+        
     }
 
 }

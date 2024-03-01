@@ -24,7 +24,8 @@ public class PendantScript : MonoBehaviour
     }
     void Update()
     {
-        if(GrabScript.isHolding == false)
+        
+        if(GrabScript.isHoldingPendant == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePosition - transform.position).normalized;

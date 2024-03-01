@@ -26,7 +26,7 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
         // swap with object
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && GrabScript.isHoldingPendant == false)
         {
             swap();
         }
