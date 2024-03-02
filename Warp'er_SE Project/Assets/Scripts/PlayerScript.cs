@@ -14,12 +14,16 @@ public class PlayerScript : MonoBehaviour
     private bool isDropping = false;
     public static bool SwapQuota = true;
     [SerializeField] private Rigidbody2D rb;
-   
+
+
+    public Animator animator;
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
         if (Input.GetKeyDown(KeyCode.W) && isDropping == false)
         {
