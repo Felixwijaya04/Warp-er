@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject PlayerPosition;
     private bool isFacingRight = true;
     private bool isDropping = false;
-    public static bool SwapQuota = true;
+    public static bool Swapped = false;
     [SerializeField] private Rigidbody2D rb;
 
 
@@ -33,6 +33,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && GrabScript.isHoldingPendant == false)
         {
             swap();
+            Swapped = true;
         }
         if (mousePos.x > transform.position.x && !isFacingRight)
         {
@@ -53,6 +54,7 @@ public class PlayerScript : MonoBehaviour
             Physics2D.IgnoreLayerCollision(8, 7, false);
             isDropping = false;
         }
+        /*Swapped = false;*/
     }
 
     private void FixedUpdate()
@@ -75,5 +77,6 @@ public class PlayerScript : MonoBehaviour
     {
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
+        
     }
 }

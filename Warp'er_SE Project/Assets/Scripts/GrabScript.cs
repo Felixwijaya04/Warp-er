@@ -18,7 +18,7 @@ public class GrabScript : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, box.position);
         float PendantDist = Vector2.Distance(transform.position, pendant.position);
-        Debug.Log(distance);
+        
         if (distance < range)
         {
             if (Input.GetMouseButtonDown(1) && isHolding == false)
@@ -49,6 +49,7 @@ public class GrabScript : MonoBehaviour
             {
                 pendant.transform.position = pendantHolder.position;
                 pendant.transform.parent = pendantHolder;
+                pendant.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
                 if (pendant.GetComponent<Rigidbody2D>())
                 {
                     pendant.GetComponent<Rigidbody2D>().simulated = false;
