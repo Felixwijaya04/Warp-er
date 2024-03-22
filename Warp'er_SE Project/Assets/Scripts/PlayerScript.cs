@@ -59,8 +59,18 @@ public class PlayerScript : MonoBehaviour
         if(GrabScript.justGrabBox == true)
         {
             // play grab animation
+            Debug.Log("grab anim triggered");
+            GrabScript.justGrabBox = false;
+            animator.SetBool("isGrabbing", true);
+            Invoke("stopGrabAnim", 0.4f);
+        }
+        // jika grab anim udh diplay sampai akhir maka isGrabbing = false
+       /* if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player_grab"))
+        {
+            animator.SetBool("isGrabbing", false);
             GrabScript.justGrabBox = false;
         }
+        Debug.Log("isGrabbing value: " + animator.GetBool("isGrabbing"));*/
     }
 
     private void FixedUpdate()
@@ -84,5 +94,10 @@ public class PlayerScript : MonoBehaviour
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
         
+    }
+
+    void stopGrabAnim()
+    {
+        animator.SetBool("isGrabbing", false);
     }
 }
