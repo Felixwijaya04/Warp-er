@@ -55,6 +55,12 @@ public class PlayerScript : MonoBehaviour
             isDropping = false;
         }
         /*Swapped = false;*/
+
+        if(GrabScript.justGrabBox == true)
+        {
+            // play grab animation
+            GrabScript.justGrabBox = false;
+        }
     }
 
     private void FixedUpdate()

@@ -9,6 +9,7 @@ public class GrabScript : MonoBehaviour
     public Transform pendantHolder;
     public static bool isHolding = false;
     public static bool isHoldingPendant = true;
+    public static bool justGrabBox = false;
     [SerializeField] Transform box;
     [SerializeField] Transform pendant;
     [SerializeField] float range;
@@ -23,6 +24,7 @@ public class GrabScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && isHolding == false)
             {
+                justGrabBox = true;
                 box.transform.position = boxHolder.position;
                 box.transform.parent = transform;
                 isHolding = true;
