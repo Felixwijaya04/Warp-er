@@ -64,13 +64,6 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("isGrabbing", true);
             Invoke("stopGrabAnim", 0.4f);
         }
-        // jika grab anim udh diplay sampai akhir maka isGrabbing = false
-       /* if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Player_grab"))
-        {
-            animator.SetBool("isGrabbing", false);
-            GrabScript.justGrabBox = false;
-        }
-        Debug.Log("isGrabbing value: " + animator.GetBool("isGrabbing"));*/
     }
 
     private void FixedUpdate()

@@ -24,7 +24,7 @@ public class PendantScript : MonoBehaviour
     }
     void Update()
     {
-        
+        // jika sedang memegang pendant maka bisa melempar pendant
         if(GrabScript.isHoldingPendant == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

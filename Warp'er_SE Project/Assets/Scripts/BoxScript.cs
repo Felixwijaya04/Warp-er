@@ -10,6 +10,8 @@ public class BoxScript : MonoBehaviour
     private Vector2 direction;
     void Update()
     {
+        // jika sedang tidak memegang pendant namun memegang paket maka bisa melempar paket
+        // maka player hanya bisa melempar paket jika sedang tidak memegang pendant
         if (GrabScript.isHoldingPendant == false && GrabScript.isHolding == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
