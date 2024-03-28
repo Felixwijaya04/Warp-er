@@ -6,6 +6,7 @@ public class PendantRotation : MonoBehaviour
 {
     public bool canRotate = false;
     public float rotSpeed;
+    public PlayerScript ps;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,12 @@ public class PendantRotation : MonoBehaviour
         {
             transform.Rotate(0,0,rotSpeed * Time.deltaTime);
         }
-        if(PlayerScript.Swapped == true)
+        if(ps.Swapped == true)
         {
             Debug.Log("swapped detected");
             rb.isKinematic = false;
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
-            PlayerScript.Swapped = false;
+            ps.Swapped = false;
         }
     }
 

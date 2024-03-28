@@ -8,11 +8,12 @@ public class BoxScript : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] float force;
     private Vector2 direction;
+    public GrabScript gs;
     void Update()
     {
         // jika sedang tidak memegang pendant namun memegang paket maka bisa melempar paket
         // maka player hanya bisa melempar paket jika sedang tidak memegang pendant
-        if (GrabScript.isHoldingPendant == false && GrabScript.isHolding == true)
+        if (gs.isHoldingPendant == false && gs.isHolding == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePosition - transform.position).normalized;
@@ -25,7 +26,7 @@ public class BoxScript : MonoBehaviour
                     GetComponent<Rigidbody2D>().simulated = true;
                 }
                 rb.velocity = new Vector2(direction.x * force, direction.y * force);
-                GrabScript.isHolding = false;
+                gs.isHolding = false;
             }
         }
         

@@ -10,7 +10,7 @@ public class PendantScript : MonoBehaviour
     [SerializeField] float force;
     [SerializeField] float range;
     private Vector2 direction;
-    
+    public GrabScript gs;
 
     private void Start()
     {
@@ -20,12 +20,12 @@ public class PendantScript : MonoBehaviour
         {
             pendant.GetComponent<Rigidbody2D>().simulated = false;
         }
-        GrabScript.isHoldingPendant = true;
+        gs.isHoldingPendant = true;
     }
     void Update()
     {
         // jika sedang memegang pendant maka bisa melempar pendant
-        if(GrabScript.isHoldingPendant == true)
+        if(gs.isHoldingPendant == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePosition - transform.position).normalized;
@@ -39,7 +39,7 @@ public class PendantScript : MonoBehaviour
                 pendant.velocity = new Vector2(direction.x * force, direction.y * force);
                 pendant.isKinematic = false;
                 pendant.GetComponent<PendantRotation>().canRotate = true;
-                GrabScript.isHoldingPendant = false;
+                gs.isHoldingPendant = false;
             }
         }
     }

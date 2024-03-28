@@ -7,9 +7,9 @@ public class GrabScript : MonoBehaviour
 {
     public Transform boxHolder;
     public Transform pendantHolder;
-    public static bool isHolding = false;
-    public static bool isHoldingPendant = true;
-    public static bool justGrabBox = false;
+    public bool isHolding = false;
+    public bool isHoldingPendant = true;
+    public bool justGrabBox = false;
     [SerializeField] Transform box;
     [SerializeField] Transform pendant;
     [SerializeField] float range;

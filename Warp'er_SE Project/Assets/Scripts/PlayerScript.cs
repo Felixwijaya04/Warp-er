@@ -12,8 +12,9 @@ public class PlayerScript : MonoBehaviour
     public GameObject PlayerPosition;
     private bool isFacingRight = true;
     private bool isDropping = false;
-    public static bool Swapped = false;
+    public bool Swapped = false;
     [SerializeField] private Rigidbody2D rb;
+    public GrabScript gs;
 
 
     public Animator animator;
@@ -30,7 +31,7 @@ public class PlayerScript : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
         }
         // swap with object
-        if (Input.GetKeyDown(KeyCode.E) && GrabScript.isHoldingPendant == false)
+        if (Input.GetKeyDown(KeyCode.E) && gs.isHoldingPendant == false)
         {
             swap();
             Swapped = true;
@@ -56,11 +57,11 @@ public class PlayerScript : MonoBehaviour
         }
         /*Swapped = false;*/
 
-        if(GrabScript.justGrabBox == true)
+        if(gs.justGrabBox == true)
         {
             // play grab animation
             Debug.Log("grab anim triggered");
-            GrabScript.justGrabBox = false;
+            gs.justGrabBox = false;
             animator.SetBool("isGrabbing", true);
             Invoke("stopGrabAnim", 0.4f);
         }
