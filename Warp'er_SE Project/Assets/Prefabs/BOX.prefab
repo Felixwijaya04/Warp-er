@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2656253443119952324}
   force: 60
+  gs: {fileID: 739996548328664474, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}

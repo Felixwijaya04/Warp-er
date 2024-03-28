@@ -11,7 +11,7 @@ public class BoxScript : MonoBehaviour
     public GrabScript gs;
     void Update()
     {
-        // jika sedang tidak memegang pendant namun memegang paket maka bisa melempar paket
+        // jika player sedang memegang pendant dan paket maka pendant yang akan dilempar, paket tdk bs dilempar
         // maka player hanya bisa melempar paket jika sedang tidak memegang pendant
         if (gs.isHoldingPendant == false && gs.isHolding == true)
         {

@@ -2452,9 +2452,17 @@ PrefabInstance:
       value: Pendant
       objectReference: {fileID: 0}
     - target: {fileID: 5196129687435136773, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 6855243555448851490}
+    - target: {fileID: 5196129687435136773, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
       propertyPath: pendantHolder
       value: 
       objectReference: {fileID: 1370853148}
+    - target: {fileID: 6519781544893783541, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+      propertyPath: ps
+      value: 
+      objectReference: {fileID: 6855243555448851489}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2476,6 +2484,10 @@ PrefabInstance:
       propertyPath: pendant
       value: 
       objectReference: {fileID: 572044042}
+    - target: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 6855243555448851490}
     - target: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: SwapWith
       value: 
@@ -2529,6 +2541,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+--- !u!114 &6855243555448851489 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+  m_PrefabInstance: {fileID: 6855243555448851488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fb62a2994a09447b24b7382f0a48e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6855243555448851490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 739996548328664474, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+  m_PrefabInstance: {fileID: 6855243555448851488}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e597223dc773ce45aa0141d180fad05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8648511702437754696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2638,6 +2672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5829079067886949911, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
+      propertyPath: gs
+      value: 
+      objectReference: {fileID: 6855243555448851490}
     - target: {fileID: 7468845650410878256, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
       propertyPath: m_Name
       value: BOX
