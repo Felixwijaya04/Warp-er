@@ -15,4 +15,9 @@ public class UI_Manager : MonoBehaviour
     {
         SceneManager.LoadScene("Level 1");
     }
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }
