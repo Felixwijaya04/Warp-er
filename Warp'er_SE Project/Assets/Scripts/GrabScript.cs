@@ -27,7 +27,7 @@ public class GrabScript : MonoBehaviour
                 justGrabBox = true;
                 Invoke("delayGrab", 0.2f);
             }
-            else if (Input.GetMouseButtonDown(1) && isHolding == true)
+            else if (Input.GetMouseButtonDown(1) && isHolding == true && PendantDist > range)
             {
                 isHolding = false;
                 box.transform.parent = null;

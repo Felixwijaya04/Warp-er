@@ -24,7 +24,7 @@ public class PendantScript : MonoBehaviour
     }
     void Update()
     {
-        // jika sedang memegang pendant maka bisa melempar pendant
+        // if player is holding a pendant then player can throw
         if(gs.isHoldingPendant == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

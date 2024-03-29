@@ -11,13 +11,12 @@ public class BoxScript : MonoBehaviour
     public GrabScript gs;
     void Update()
     {
-        // jika player sedang memegang pendant dan paket maka pendant yang akan dilempar, paket tdk bs dilempar
-        // maka player hanya bisa melempar paket jika sedang tidak memegang pendant
+        //if a player is holding a box and pendant then player can't throw box
         if (gs.isHoldingPendant == false && gs.isHolding == true)
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             direction = (mousePosition - transform.position).normalized;
-            // code buat throw obj
+            // code for throwing box
             if (Input.GetMouseButtonDown(0))
             {
                 transform.parent = null;
