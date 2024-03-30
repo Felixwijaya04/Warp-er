@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     private bool isFacingRight = true;
     private bool isDropping = false;
     public bool Swapped = false;
+    private bool isJumping = false;
     [SerializeField] private Rigidbody2D rb;
     public GrabScript gs;
 
@@ -26,9 +27,10 @@ public class PlayerScript : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-        if (Input.GetKeyDown(KeyCode.W) && isDropping == false)
+        if (Input.GetKeyDown(KeyCode.W) && isDropping == false && isJumping == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpPower);
+            isJumping = true;
         }
         // swap with object
         if (Input.GetKeyDown(KeyCode.E) && gs.isHoldingPendant == false)
@@ -65,6 +67,15 @@ public class PlayerScript : MonoBehaviour
             animator.SetBool("isGrabbing", true);
             Invoke("stopGrabAnim", 0.4f);
         }
+
+        if(gs.isHolding == true)
+        {
+            MovementSpeed = 5f;
+        }
+        if(gs.isHolding == false)
+        {
+            MovementSpeed = 10f;
+        }
     }
 
     private void FixedUpdate()
@@ -93,5 +104,13 @@ public class PlayerScript : MonoBehaviour
     void stopGrabAnim()
     {
         animator.SetBool("isGrabbing", false);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isJumping = false;
+        }
     }
 }
