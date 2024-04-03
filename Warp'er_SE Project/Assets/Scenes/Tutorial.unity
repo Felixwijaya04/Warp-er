@@ -2949,10 +2949,18 @@ PrefabInstance:
       propertyPath: pendantHolder
       value: 
       objectReference: {fileID: 1370853148}
+    - target: {fileID: 5279704139740033530, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 6519781544893783541, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
       propertyPath: ps
       value: 
       objectReference: {fileID: 6855243555448851489}
+    - target: {fileID: 6519781544893783541, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

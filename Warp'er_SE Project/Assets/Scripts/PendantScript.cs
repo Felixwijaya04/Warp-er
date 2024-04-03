@@ -38,7 +38,7 @@ public class PendantScript : MonoBehaviour
                 }
                 pendant.velocity = new Vector2(direction.x * force, direction.y * force);
                 pendant.isKinematic = false;
-                pendant.GetComponent<PendantRotation>().canRotate = true;
+                /*pendant.GetComponent<PendantRotation>().canRotate = true;*/
                 gs.isHoldingPendant = false;
             }
         }

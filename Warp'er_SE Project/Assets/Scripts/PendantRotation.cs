@@ -30,11 +30,11 @@ public class PendantRotation : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         canRotate = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         rb.freezeRotation = true;
-    }
+    }*/
 }
