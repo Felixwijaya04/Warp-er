@@ -42,14 +42,7 @@ public class GrabScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && isHoldingPendant == false)
             {
-                pendant.transform.position = pendantHolder.position;
-                pendant.transform.parent = pendantHolder;
-                pendant.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
-                if (pendant.GetComponent<Rigidbody2D>())
-                {
-                    pendant.GetComponent<Rigidbody2D>().simulated = false;
-                }
-                isHoldingPendant = true;
+                pendantGrab();
             }
             
         }
@@ -64,5 +57,17 @@ public class GrabScript : MonoBehaviour
         {
             box.GetComponent<Rigidbody2D>().simulated = false;
         }
+    }
+
+    public void pendantGrab()
+    {
+        pendant.transform.position = pendantHolder.position;
+        pendant.transform.parent = pendantHolder;
+        pendant.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f);
+        if (pendant.GetComponent<Rigidbody2D>())
+        {
+            pendant.GetComponent<Rigidbody2D>().simulated = false;
+        }
+        isHoldingPendant = true;
     }
 }

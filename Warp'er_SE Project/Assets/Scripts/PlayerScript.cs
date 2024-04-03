@@ -93,6 +93,7 @@ public class PlayerScript : MonoBehaviour
         PlayerPosition.transform.position = SwapWith.transform.position;
         SwapWith.transform.position = tempPosition;*/
         PlayerPosition.transform.position = SwapWith.transform.position;
+        gs.pendantGrab();
     }
 
     private void flip()
