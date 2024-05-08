@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public float MovementSpeed = 10f;
-    public float JumpPower = 8f;
+    public float JumpPower = 13f;
     private float horizontal;
     public GameObject SwapWith;
     public Vector2 tempPosition;
