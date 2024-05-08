@@ -8,6 +8,7 @@ TagManager:
   - Door
   - SwappableObject
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
