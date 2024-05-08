@@ -9,6 +9,7 @@ TagManager:
   - SwappableObject
   - Ground
   - Wall
+  - Platform
   layers:
   - Default
   - TransparentFX
