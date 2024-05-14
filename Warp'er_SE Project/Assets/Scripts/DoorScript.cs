@@ -14,7 +14,7 @@ public class DoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && (bs._isPlayer == true || bs._isActivate == true))
+        if (bs._isActivate == true || (Input.GetKeyDown(KeyCode.F) && bs._isPlayer == true))
         {
             check();
         }

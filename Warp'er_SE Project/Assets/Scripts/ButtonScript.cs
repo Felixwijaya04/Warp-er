@@ -27,6 +27,12 @@ public class ButtonScript : MonoBehaviour
         {
             _isPlayer = true;
         }
+        if (collision.CompareTag("Pendant"))
+        {
+            Debug.Log("button get hit");
+            _isActivate = true;
+            Debug.Log(_isActivate);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -34,12 +40,10 @@ public class ButtonScript : MonoBehaviour
         {
             _isPlayer = false;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("button get hit");
-        _isActivate = true;
+        if (collision.CompareTag("Pendant"))
+        {
+            _isActivate = false;
+        }
     }
 
 }
