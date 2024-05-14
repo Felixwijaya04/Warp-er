@@ -6,6 +6,7 @@ public class LeverScript : MonoBehaviour
 {
     public GameObject prompts;
     public bool _isPlayer = false;
+    public bool _isActivate = false;
 
     // Update is called once per frame
     void Update()
@@ -26,12 +27,20 @@ public class LeverScript : MonoBehaviour
         {
             _isPlayer = true;
         }
+        if (collision.CompareTag("Pendant"))
+        {
+            _isActivate = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             _isPlayer = false;  
+        }
+        if (collision.CompareTag("Pendant"))
+        {
+            _isActivate = false;
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class Door2Script : MonoBehaviour
 {
     public Transform PointA;
     public Transform PointB;
@@ -18,7 +18,7 @@ public class MovingPlatform : MonoBehaviour
         {
             check();
         }
-        if(isMoving == true)
+        if (isMoving == true)
         {
             move();
         }
@@ -26,9 +26,9 @@ public class MovingPlatform : MonoBehaviour
 
     void move()
     {
-        
+
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
-        if(transform.position == nextPos)
+        if (transform.position == nextPos)
         {
             isMoving = false;
         }

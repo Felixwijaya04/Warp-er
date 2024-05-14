@@ -29,9 +29,7 @@ public class ButtonScript : MonoBehaviour
         }
         if (collision.CompareTag("Pendant"))
         {
-            Debug.Log("button get hit");
             _isActivate = true;
-            Debug.Log(_isActivate);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
