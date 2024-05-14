@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Wall
   - Platform
+  - Pendant
   layers:
   - Default
   - TransparentFX
