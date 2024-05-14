@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class DoorScript : MonoBehaviour
 {
     public Transform PointA;
     public Transform PointB;
     public float speed;
-    public LeverScript ls;
+    public ButtonScript bs;
 
     private Vector3 nextPos;
     private bool isMoving = false;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && ls._isPlayer == true)
+        if (Input.GetKeyDown(KeyCode.F) && (bs._isPlayer == true || bs._isActivate == true))
         {
             check();
         }
-        if(isMoving == true)
+        if (isMoving == true)
         {
             move();
         }
@@ -26,9 +26,9 @@ public class MovingPlatform : MonoBehaviour
 
     void move()
     {
-        
+
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
-        if(transform.position == nextPos)
+        if (transform.position == nextPos)
         {
             isMoving = false;
         }

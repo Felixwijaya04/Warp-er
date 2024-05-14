@@ -166,7 +166,7 @@ MonoBehaviour:
   PointA: {fileID: 1459549921526554388}
   PointB: {fileID: 7771337063694570802}
   speed: 5
-  MP: {fileID: 349628228583373045}
+  ls: {fileID: 6350468286588973455}
 --- !u!1 &411020903158230463
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompts: {fileID: 4929794490906785320}
+  _isPlayer: 0
 --- !u!1 &4929794490906785320
 GameObject:
   m_ObjectHideFlags: 0

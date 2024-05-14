@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverScript : MonoBehaviour
+public class ButtonScript : MonoBehaviour
 {
     public GameObject prompts;
     public bool _isPlayer = false;
+    public bool _isActivate = false;
 
     // Update is called once per frame
     void Update()
@@ -31,7 +32,14 @@ public class LeverScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            _isPlayer = false;  
+            _isPlayer = false;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("button get hit");
+        _isActivate = true;
+    }
+
 }
