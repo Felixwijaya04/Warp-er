@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.9811321, g: 0.56118804, b: 0, a: 1}
   m_FlipX: 0
@@ -130,7 +130,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -164,9 +164,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pendantHolder: {fileID: 0}
   pendant: {fileID: 84249954214701823}
-  force: 50
+  force: 70
   range: 0
-  gs: {fileID: 739996548328664474, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+  gs: {fileID: 0}
 --- !u!114 &6519781544893783541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,4 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canRotate: 0
   rotSpeed: 700
-  ps: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+  ps: {fileID: 0}

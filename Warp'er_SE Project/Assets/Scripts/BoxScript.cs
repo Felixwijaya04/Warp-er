@@ -12,21 +12,26 @@ public class BoxScript : MonoBehaviour
     void Update()
     {
         //if a player is holding a box and pendant then player can't throw box
-        if (gs.isHoldingPendant == false && gs.isHolding == true)
+        if (gs.isHoldingPendant == false && gs.isHolding == true && Time.timeScale != 0f)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = (mousePosition - transform.position).normalized;
-            // code for throwing box
-            if (Input.GetMouseButtonDown(0))
+            // to prevent multiple input when a pause button is click at the same time
+            if (!UI_Manager.instance.IsPointerOverUIObject())
             {
-                transform.parent = null;
-                if (GetComponent<Rigidbody2D>())
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                direction = (mousePosition - transform.position).normalized;
+                // code for throwing box
+                if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Rigidbody2D>().simulated = true;
+                    transform.parent = null;
+                    if (GetComponent<Rigidbody2D>())
+                    {
+                        GetComponent<Rigidbody2D>().simulated = true;
+                    }
+                    rb.velocity = new Vector2(direction.x * force, direction.y * force);
+                    gs.isHolding = false;
                 }
-                rb.velocity = new Vector2(direction.x * force, direction.y * force);
-                gs.isHolding = false;
             }
+            
         }
         
     }

@@ -38,13 +38,19 @@ public class PlayerScript : MonoBehaviour
             swap();
             Swapped = true;
         }
-        if (mousePos.x > transform.position.x && !isFacingRight)
+        if (mousePos.x > transform.position.x && !isFacingRight && Time.timeScale != 0f)
         {
-            flip();
+            if (!UI_Manager.instance.IsPointerOverUIObject())
+            {
+                flip();
+            }
         }
-        else if (mousePos.x < transform.position.x && isFacingRight)
+        else if (mousePos.x < transform.position.x && isFacingRight && Time.timeScale != 0f)
         {
-            flip();
+            if (!UI_Manager.instance.IsPointerOverUIObject())
+            {
+                flip();
+            }
         }
         // drop down in platform
         if(Input.GetKey(KeyCode.S))

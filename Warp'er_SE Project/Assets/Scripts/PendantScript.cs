@@ -25,22 +25,27 @@ public class PendantScript : MonoBehaviour
     void Update()
     {
         // if player is holding a pendant then player can throw
-        if(gs.isHoldingPendant == true)
+        if(gs.isHoldingPendant == true && Time.timeScale != 0f)
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            direction = (mousePosition - transform.position).normalized;
-            if(Input.GetMouseButtonDown(0))
+            // to prevent multiple input when a pause button is click at the same time
+            if (!UI_Manager.instance.IsPointerOverUIObject())
             {
-                transform.parent = null;
-                if (GetComponent<Rigidbody2D>())
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                direction = (mousePosition - transform.position).normalized;
+                if (Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Rigidbody2D>().simulated = true;
+                    transform.parent = null;
+                    if (GetComponent<Rigidbody2D>())
+                    {
+                        GetComponent<Rigidbody2D>().simulated = true;
+                    }
+                    pendant.velocity = new Vector2(direction.x * force, direction.y * force);
+                    pendant.isKinematic = false;
+                    /*pendant.GetComponent<PendantRotation>().canRotate = true;*/
+                    gs.isHoldingPendant = false;
                 }
-                pendant.velocity = new Vector2(direction.x * force, direction.y * force);
-                pendant.isKinematic = false;
-                /*pendant.GetComponent<PendantRotation>().canRotate = true;*/
-                gs.isHoldingPendant = false;
             }
+            
         }
     }
 }
