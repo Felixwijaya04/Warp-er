@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2399500824168948291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39999998, y: -0.9599998, z: 0}
+  m_LocalPosition: {x: 1.15, y: -0.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.85, y: -3.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6609, y: 0.6609, z: 0.6609}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8803164900280257861}
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 10
   JumpPower: 8
-  SwapWith: {fileID: 4171223101176230346, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+  SwapWith: {fileID: 0}
   tempPosition: {x: 0, y: 0}
   PlayerPosition: {fileID: 2657261184822405521}
   Swapped: 0
@@ -223,8 +223,8 @@ MonoBehaviour:
   isHolding: 0
   isHoldingPendant: 0
   justGrabBox: 0
-  box: {fileID: 3545945389567764575, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
-  pendant: {fileID: 1939561710927210215, guid: 043b1413b8580134094eb0a75b41f0b1, type: 3}
+  box: {fileID: 0}
+  pendant: {fileID: 0}
   range: 3
 --- !u!114 &6873746531025679308
 MonoBehaviour:
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 7144336324552781835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 2.43, z: 0}
+  m_LocalPosition: {x: -0.26, y: 1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
