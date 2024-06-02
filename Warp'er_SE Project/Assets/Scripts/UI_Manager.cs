@@ -5,10 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class UI_Manager : MonoBehaviour
 {
     public static UI_Manager instance;
+    [Header("GameObject Ref")]
+    public GameObject PauseMenu;
+    public GameObject FinishMenu;
     public void Start()
     {
         Time.timeScale = 1.0f;
@@ -22,14 +26,23 @@ public class UI_Manager : MonoBehaviour
             
         }
     }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == false)
+        {
+            PauseMenu.gameObject.SetActive(true);
+            pause();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == true)
+        {
+            PauseMenu.gameObject.SetActive(false);
+            resume();
+        }
+    }
     public void playTutorial()
     {
         SceneManager.LoadScene("Tutorial");
-    }
-
-    public void loadLevel1()
-    {
-        SceneManager.LoadScene("Level 1");
     }
 
     public void changeScene(string sceneName)
@@ -50,6 +63,21 @@ public class UI_Manager : MonoBehaviour
         Application.Quit();
     }
 
+    public void LevelFinish()
+    {
+        Time.timeScale = 0f;
+        Input.ResetInputAxes();
+        FinishMenu.gameObject.SetActive(true);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            LevelFinish();
+        }
+    }
+        
     public bool IsPointerOverUIObject()
     {
         if(EventSystem.current == null) return false;

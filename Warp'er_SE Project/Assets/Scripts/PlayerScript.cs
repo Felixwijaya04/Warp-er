@@ -4,83 +4,91 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    [Header("Player Settings")]
     public float MovementSpeed = 10f;
     public float JumpPower = 13f;
+    
+    [Header("Player Info")]
     private float horizontal;
     public GameObject SwapWith;
     public Vector2 tempPosition;
     public GameObject PlayerPosition;
+
     private bool isFacingRight = true;
     private bool isDropping = false;
     public bool Swapped = false;
     private bool isJumping = false;
     [SerializeField] private Rigidbody2D rb;
+    
+    [Header("Script Reference")]
     public GrabScript gs;
-
 
     public Animator animator;
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (Time.timeScale != 0f)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+            animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-        if (Input.GetKeyDown(KeyCode.W) && isDropping == false && isJumping == false)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, JumpPower);
-            isJumping = true;
-        }
-        // swap with object
-        if (Input.GetKeyDown(KeyCode.E) && gs.isHoldingPendant == false)
-        {
-            swap();
-            Swapped = true;
-        }
-        if (mousePos.x > transform.position.x && !isFacingRight && Time.timeScale != 0f)
-        {
-            if (!UI_Manager.instance.IsPointerOverUIObject())
+            if (Input.GetKeyDown(KeyCode.W) && isDropping == false && isJumping == false)
             {
-                flip();
+                rb.velocity = new Vector2(rb.velocity.x, JumpPower);
+                isJumping = true;
             }
-        }
-        else if (mousePos.x < transform.position.x && isFacingRight && Time.timeScale != 0f)
-        {
-            if (!UI_Manager.instance.IsPointerOverUIObject())
+            // swap with object
+            if (Input.GetKeyDown(KeyCode.E) && gs.isHoldingPendant == false)
             {
-                flip();
+                swap();
+                Swapped = true;
             }
-        }
-        // drop down in platform
-        if(Input.GetKey(KeyCode.S))
-        {
-            Physics2D.IgnoreLayerCollision(8, 7, true);
-            isDropping = true;
-        }
-        else
-        {
-            Physics2D.IgnoreLayerCollision(8, 7, false);
-            isDropping = false;
-        }
-        /*Swapped = false;*/
+            if (mousePos.x > transform.position.x && !isFacingRight && Time.timeScale != 0f)
+            {
+                if (!UI_Manager.instance.IsPointerOverUIObject())
+                {
+                    flip();
+                }
+            }
+            else if (mousePos.x < transform.position.x && isFacingRight && Time.timeScale != 0f)
+            {
+                if (!UI_Manager.instance.IsPointerOverUIObject())
+                {
+                    flip();
+                }
+            }
+            // drop down in platform
+            if (Input.GetKey(KeyCode.S))
+            {
+                Physics2D.IgnoreLayerCollision(8, 7, true);
+                isDropping = true;
+            }
+            else
+            {
+                Physics2D.IgnoreLayerCollision(8, 7, false);
+                isDropping = false;
+            }
+            /*Swapped = false;*/
 
-        if(gs.justGrabBox == true)
-        {
-            // play grab animation
-            Debug.Log("grab anim triggered");
-            gs.justGrabBox = false;
-            animator.SetBool("isGrabbing", true);
-            Invoke("stopGrabAnim", 0.4f);
-        }
+            if (gs.justGrabBox == true)
+            {
+                // play grab animation
+                Debug.Log("grab anim triggered");
+                gs.justGrabBox = false;
+                animator.SetBool("isGrabbing", true);
+                Invoke("stopGrabAnim", 0.4f);
+            }
 
-        if(gs.isHolding == true)
-        {
-            MovementSpeed = 5f;
-        }
-        if(gs.isHolding == false)
-        {
-            MovementSpeed = 10f;
+            if (gs.isHolding == true)
+            {
+                MovementSpeed = 5f;
+            }
+            if (gs.isHolding == false)
+            {
+                MovementSpeed = 10f;
+            }
         }
     }
 
