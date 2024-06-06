@@ -17,6 +17,7 @@ public class TutorialManager : MonoBehaviour
     public GameObject PlatformCollider;
     public GameObject ThrowCollider;
 
+    public int stage = 0;
     private void Start()
     {
         MovementTUT.SetActive(true);
@@ -33,32 +34,20 @@ public class TutorialManager : MonoBehaviour
         {
             JumpTUT.SetActive(false);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log("Collision detected with: " + collision.gameObject.name);
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.S) && PlatformTUT.activeSelf == true)
         {
-            if(collision.gameObject == JumpCollider)
-            {
-                Debug.Log("yesJump");
-                JumpTUT.SetActive(true);
-            }
-            
+            PlatformTUT.SetActive(false);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (collision.gameObject == JumpCollider)
-            {
-                Debug.Log("yesJump");
-                JumpTUT.SetActive(false);
-            }
 
-        }
+    public void checkForStage(int stage)
+    {
+        if(stage == 1)
+        {
+            JumpTUT.SetActive(true);
+        } else if(stage == 2)
+        {
+            PlatformTUT.SetActive(true);
+        } 
     }
 }
