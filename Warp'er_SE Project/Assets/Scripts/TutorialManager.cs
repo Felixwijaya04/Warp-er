@@ -38,6 +38,11 @@ public class TutorialManager : MonoBehaviour
         {
             PlatformTUT.SetActive(false);
         }
+        if(Input.GetMouseButtonDown(0) && ThrowTUT.activeSelf == true)
+        {
+            ThrowTUT.SetActive(false);
+            TeleportTUT.SetActive(true);
+        }
     }
 
     public void checkForStage(int stage)
@@ -48,6 +53,9 @@ public class TutorialManager : MonoBehaviour
         } else if(stage == 2)
         {
             PlatformTUT.SetActive(true);
-        } 
+        } else if (stage == 3)
+        {
+            ThrowTUT.SetActive(true);
+        }
     }
 }
