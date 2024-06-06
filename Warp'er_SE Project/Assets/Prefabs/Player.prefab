@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 10
-  JumpPower: 8
+  JumpPower: 8.5
   SwapWith: {fileID: 0}
   tempPosition: {x: 0, y: 0}
   PlayerPosition: {fileID: 2657261184822405521}

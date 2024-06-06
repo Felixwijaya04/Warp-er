@@ -26,6 +26,7 @@ public class TutorialManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
+            Debug.Log("Movement done");
             MovementTUT.SetActive(false);
         }
         if(Input.GetKeyDown(KeyCode.W) && JumpTUT.activeSelf == true )
@@ -36,7 +37,8 @@ public class TutorialManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("smth");
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+
         if (collision.gameObject.CompareTag("Player"))
         {
             if(collision.gameObject == JumpCollider)
