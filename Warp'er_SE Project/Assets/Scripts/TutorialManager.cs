@@ -43,6 +43,10 @@ public class TutorialManager : MonoBehaviour
             ThrowTUT.SetActive(false);
             TeleportTUT.SetActive(true);
         }
+        if (Input.GetKeyDown(KeyCode.E) && TeleportTUT.activeSelf == true)
+        {
+            TeleportTUT.SetActive(false) ;
+        }
     }
 
     public void checkForStage(int stage)
