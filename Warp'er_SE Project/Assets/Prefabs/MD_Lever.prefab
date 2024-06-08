@@ -214,6 +214,7 @@ MonoBehaviour:
   PointB: {fileID: 5076311629103080047}
   speed: 5
   ls: {fileID: 513713275641930434}
+  loc: 0
 --- !u!1 &5583749014499585262
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ GameObject:
   - component: {fileID: 5069271690490585636}
   - component: {fileID: 7076354880497933808}
   - component: {fileID: 513713275641930434}
+  - component: {fileID: 8658488286076938033}
   m_Layer: 0
   m_Name: Door_Lever
   m_TagString: Untagged
@@ -475,3 +477,18 @@ MonoBehaviour:
   prompts: {fileID: 6572211662769250363}
   _isPlayer: 0
   _isActivate: 0
+--- !u!114 &8658488286076938033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227952910361375072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de1744e643278f4aaf7d056b526c633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp1: {fileID: 21300000, guid: fe741c1593ea888489dc667723f7a3a6, type: 3}
+  sp2: {fileID: 21300000, guid: 647ca2cbaf93c50408e58400d40b4d3d, type: 3}
+  door: {fileID: 4908713579544871982}

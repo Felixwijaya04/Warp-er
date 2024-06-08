@@ -11,6 +11,7 @@ public class Door2Script : MonoBehaviour
 
     private Vector3 nextPos;
     private bool isMoving = false;
+    [HideInInspector] public bool loc;
     // Update is called once per frame
     void Update()
     {
@@ -40,10 +41,12 @@ public class Door2Script : MonoBehaviour
         if (transform.position == PointA.position)
         {
             nextPos = PointB.position;
+            loc = true;
         }
         else if (transform.position == PointB.position)
         {
             nextPos = PointA.position;
+            loc = false;
         }
         isMoving = true;
     }

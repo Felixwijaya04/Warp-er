@@ -167,6 +167,7 @@ MonoBehaviour:
   PointB: {fileID: 7771337063694570802}
   speed: 5
   ls: {fileID: 6350468286588973455}
+  loc: 0
 --- !u!1 &411020903158230463
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +242,7 @@ GameObject:
   - component: {fileID: 7814518604989913488}
   - component: {fileID: 8377671978736187059}
   - component: {fileID: 6350468286588973455}
+  - component: {fileID: 257243136906298634}
   m_Layer: 0
   m_Name: MP_Lever
   m_TagString: Untagged
@@ -375,6 +377,21 @@ MonoBehaviour:
   prompts: {fileID: 4929794490906785320}
   _isPlayer: 0
   _isActivate: 0
+--- !u!114 &257243136906298634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847483499766172304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b8a7e8f8d33a34caf1e7b244ccdf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sp1: {fileID: 21300000, guid: 0989f0afdad69d243a2c7da80fba79ae, type: 3}
+  sp2: {fileID: 21300000, guid: a310ace181c9baa419e0490a447f5a2c, type: 3}
+  mp: {fileID: 413243813421976277}
 --- !u!1 &4929794490906785320
 GameObject:
   m_ObjectHideFlags: 0
