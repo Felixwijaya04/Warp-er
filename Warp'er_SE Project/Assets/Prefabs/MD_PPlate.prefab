@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 7773324760486549596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -63.118732, y: -10.127018, z: 13.932288}
-  m_LocalScale: {x: 7.1636, y: 7.1636, z: 7.1636}
+  m_LocalPosition: {x: -86.31, y: -53.55, z: 13.932288}
+  m_LocalScale: {x: 2.2312608, y: 2.2312608, z: 2.2312608}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9069966707699582386}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d736c420e01ff0b47b6783efe89e8372, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2094f36de41e6443a9f464c9135e58c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.002042234, y: -0.40832353}
+  m_Offset: {x: 0.0036690086, y: -0.42070115}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9060575, y: 0.12944606}
+  m_Size: {x: 0.93077993, y: 0.1613133}
   m_EdgeRadius: 0
 --- !u!114 &4488420928649235691
 MonoBehaviour:
@@ -197,44 +197,56 @@ PrefabInstance:
       value: MD_PPlate
       objectReference: {fileID: 0}
     - target: {fileID: 3668507645713830784, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93bae11a902508d48833b8ded431ec41, type: 3}
+    - target: {fileID: 3668507645713830784, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_Color.b
-      value: 0.82745105
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3668507645713830784, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_Color.g
-      value: 0.5058824
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3668507645713830784, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_Color.r
-      value: 0.30980393
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5076311629103080047, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.96
+      value: -58.59
       objectReference: {fileID: 0}
     - target: {fileID: 5076311629103080047, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 59.24
+      value: -32.92
       objectReference: {fileID: 0}
     - target: {fileID: 6787651107041813156, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.96
+      value: -58.59
       objectReference: {fileID: 0}
     - target: {fileID: 6787651107041813156, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.986
+      value: -36.15
       objectReference: {fileID: 0}
     - target: {fileID: 7333727286740423279, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 14.192192
+      value: 1.5751349
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333727286740423279, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0953674
+      objectReference: {fileID: 0}
+    - target: {fileID: 7333727286740423279, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.7748
       objectReference: {fileID: 0}
     - target: {fileID: 7333727286740423279, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.96
+      value: -58.59
       objectReference: {fileID: 0}
     - target: {fileID: 7333727286740423279, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.986
+      value: -36.15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4908713579544871982, guid: eeb8dee87a54f2949b36b01c3ac6cacf, type: 3}

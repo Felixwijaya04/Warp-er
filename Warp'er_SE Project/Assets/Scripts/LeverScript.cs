@@ -31,6 +31,11 @@ public class LeverScript : MonoBehaviour
         {
             _isActivate = true;
         }
+        if (collision.CompareTag("Wooden Crate"))
+        {
+            _isActivate = true;
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -42,5 +47,32 @@ public class LeverScript : MonoBehaviour
         {
             _isActivate = false;
         }
+        if (collision.CompareTag("Wooden Crate"))
+        {
+            _isActivate = false;
+        }
     }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pendant"))
+        {
+            _isActivate = true;
+        }
+        if (collision.gameObject.CompareTag("Wooden Crate"))
+        {
+            _isActivate = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pendant"))
+        {
+            _isActivate = false;
+        }
+        if (collision.gameObject.CompareTag("Wooden Crate"))
+        {
+            _isActivate = false;
+        }
+    }*/
 }

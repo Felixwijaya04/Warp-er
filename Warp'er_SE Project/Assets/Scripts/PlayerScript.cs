@@ -128,5 +128,9 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
+        if(other.gameObject.CompareTag("Wooden Crate"))
+        {
+            isJumping = false;
+        }
     }
 }
