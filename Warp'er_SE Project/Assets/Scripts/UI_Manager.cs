@@ -13,6 +13,8 @@ public class UI_Manager : MonoBehaviour
     [Header("GameObject Ref")]
     public GameObject PauseMenu;
     public GameObject FinishMenu;
+
+    public static int LevelStage = 0;
     public void Start()
     {
         Time.timeScale = 1.0f;
@@ -68,6 +70,8 @@ public class UI_Manager : MonoBehaviour
         Time.timeScale = 0f;
         Input.ResetInputAxes();
         FinishMenu.gameObject.SetActive(true);
+        LevelStage++;
+        //Debug.Log(LevelStage);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
