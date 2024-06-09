@@ -132,5 +132,9 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
+        if (other.gameObject.CompareTag("Platform"))
+        {
+            isJumping = false;
+        }
     }
 }

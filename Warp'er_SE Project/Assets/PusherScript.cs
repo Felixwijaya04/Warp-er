@@ -50,13 +50,9 @@ public class PusherScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && transform.position == PointB.position)
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bounce, ForceMode2D.Impulse);
-            Debug.Log("Pusher");
-            /*Vector2 direction = GetComponent<Rigidbody2D>().velocity.normalized;
-            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * bounce, ForceMode2D.Impulse);
-            Debug.Log("Pusher");*/
         }
     }
 }

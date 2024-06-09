@@ -27,14 +27,6 @@ public class LeverScript : MonoBehaviour
         {
             _isPlayer = true;
         }
-        if (collision.CompareTag("Pendant"))
-        {
-            _isActivate = true;
-        }
-        if (collision.CompareTag("Wooden Crate"))
-        {
-            _isActivate = true;
-        }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -42,14 +34,6 @@ public class LeverScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _isPlayer = false;  
-        }
-        if (collision.CompareTag("Pendant"))
-        {
-            _isActivate = false;
-        }
-        if (collision.CompareTag("Wooden Crate"))
-        {
-            _isActivate = false;
         }
     }
 }
