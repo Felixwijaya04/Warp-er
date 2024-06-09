@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class CounterScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] public int count;
+    public Sprite sp1, sp2, sp3;
+    private void Update()
     {
-        
+        if (count == 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp1;
+        }
+        if(count == 1)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp1;
+        }
+        if(count == 2)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp2;
+        }
+        if (count == 3)
+        {
+            GetComponent<SpriteRenderer>().sprite = sp3;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Trash"))
+        {
+            Destroy(collision.gameObject);
+            count++;
+        }
     }
 }

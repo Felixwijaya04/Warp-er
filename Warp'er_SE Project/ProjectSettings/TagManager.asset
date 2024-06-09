@@ -13,6 +13,7 @@ TagManager:
   - Pendant
   - Ladder
   - Wooden Crate
+  - Trash
   layers:
   - Default
   - TransparentFX
