@@ -8,17 +8,20 @@ public class MovingPlatform : MonoBehaviour
     public Transform PointB;
     public float speed;
     public LeverScript ls;
-
+    public changeSprite_Lever csl;
     private Vector3 nextPos;
     private bool isMoving = false;
+    private int value = 1;
 
     [HideInInspector] public bool loc;
     // Update is called once per frame
     void Update()
     {
+        csl.isODD = value;
         if (ls._isActivate == true || (Input.GetKeyDown(KeyCode.F) && ls._isPlayer == true))
         {
             check();
+            value++;
         }
         if(isMoving == true)
         {
