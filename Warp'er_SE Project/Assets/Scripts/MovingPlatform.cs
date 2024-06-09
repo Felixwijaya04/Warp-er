@@ -62,6 +62,10 @@ public class MovingPlatform : MonoBehaviour
         {
             collision.gameObject.transform.parent = transform;
         }
+        if (collision.gameObject.CompareTag("SwappableObject"))
+        {
+            collision.gameObject.transform.parent = transform;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -71,6 +75,10 @@ public class MovingPlatform : MonoBehaviour
             collision.gameObject.transform.parent = null;
         }
         if (collision.gameObject.CompareTag("Wooden Crate"))
+        {
+            collision.gameObject.transform.parent = null;
+        }
+        if (collision.gameObject.CompareTag("SwappableObject"))
         {
             collision.gameObject.transform.parent = null;
         }
