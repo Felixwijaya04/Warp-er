@@ -12,12 +12,28 @@ public class Door2Script : MonoBehaviour
     private Vector3 nextPos;
     private bool isMoving = false;
     [HideInInspector] public bool loc;
+    public AudioManager audioManager;
+    public changeSprite_Lever csl;
+    private int value = 1;
     // Update is called once per frame
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Update()
     {
+        csl.isODD = value;
         if (ls._isActivate == true || (Input.GetKeyDown(KeyCode.F) && ls._isPlayer == true))
         {
             check();
+            if(value % 2 == 0)
+            {
+                audioManager.PlaySfx(audioManager.lever1);
+            } else if(value % 2 !=0)
+            {
+                audioManager.PlaySfx(audioManager.lever2);
+            }
+            value++;
         }
         if (isMoving == true)
         {

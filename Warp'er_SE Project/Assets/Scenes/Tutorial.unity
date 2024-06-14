@@ -15844,6 +15844,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1685915286}
     - target: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+      propertyPath: walk
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061335584970798019, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: SwapWith
       value: 
       objectReference: {fileID: 572044038}
@@ -15890,6 +15894,10 @@ PrefabInstance:
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8428825855940904545, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

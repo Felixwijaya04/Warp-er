@@ -9,6 +9,12 @@ public class Spawner : MonoBehaviour
     public changeSprite_Lever csl;
     [SerializeField] private int limit;
     private int value = 1;
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void Update()
     {
         csl.isODD = value;
@@ -18,6 +24,13 @@ public class Spawner : MonoBehaviour
             {
                 Instantiate(trashBag,transform.position,Quaternion.identity);
                 limit--;
+                if(value % 2 == 0)
+                {
+                    audioManager.PlaySfx(audioManager.lever1);
+                } else if(value % 2 != 0)
+                {
+                    audioManager.PlaySfx(audioManager.lever2);
+                }
                 value++;
             }
         }

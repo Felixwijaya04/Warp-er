@@ -20,18 +20,17 @@ public class PlayerScript : MonoBehaviour
     public bool Swapped = false;
     private bool isJumping = false;
     [SerializeField] private Rigidbody2D rb;
+    private bool isGrounded = true;
+    private bool Is_walksound = false;
     
     [Header("Script Reference")]
     public GrabScript gs;
     public AudioManager audioManager;
     public Animator animator;
-    AudioSource audioSource;
 
-    Rigidbody2D rb2d;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -43,18 +42,10 @@ public class PlayerScript : MonoBehaviour
 
             animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
-            if (horizontal == 0)
+            if (horizontal != 0 && isGrounded == true && Is_walksound == false)
             {
-                /*Debug.Log(horizontal);*/
-                audioSource.Stop();
-            }
-            else if (horizontal != 0 && isJumping == false)
-            {
-                if (!audioSource.isPlaying)
-                {
-                    audioSource.Play();
-                }
-
+                StartCoroutine("walkSound");
+                
             }
 
             if (Input.GetKeyDown(KeyCode.W) && isDropping == false && isJumping == false)
@@ -62,6 +53,7 @@ public class PlayerScript : MonoBehaviour
                 audioManager.PlaySfx(audioManager.jump);
                 rb.velocity = new Vector2(rb.velocity.x, JumpPower);
                 isJumping = true;
+                isGrounded = false;
             }
             // swap with object
             if (Input.GetKeyDown(KeyCode.E) && gs.isHoldingPendant == false)
@@ -153,6 +145,7 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
+            isGrounded = true;
         }
         if(other.gameObject.CompareTag("Wooden Crate"))
         {
@@ -166,5 +159,13 @@ public class PlayerScript : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    IEnumerator walkSound()
+    {
+        Is_walksound = true;
+        audioManager.PlaySfx(audioManager.walk);
+        yield return new WaitForSeconds(0.148f);
+        Is_walksound = false;
     }
 }
