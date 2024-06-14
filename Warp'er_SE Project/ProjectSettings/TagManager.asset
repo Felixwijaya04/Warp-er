@@ -14,6 +14,7 @@ TagManager:
   - Ladder
   - Wooden Crate
   - Trash
+  - Audio
   layers:
   - Default
   - TransparentFX

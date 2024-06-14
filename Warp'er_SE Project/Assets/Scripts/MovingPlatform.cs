@@ -14,14 +14,28 @@ public class MovingPlatform : MonoBehaviour
     private int value = 1;
 
     [HideInInspector] public bool loc;
+    public AudioManager audioManager;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Update()
     {
         csl.isODD = value;
         if (ls._isActivate == true || (Input.GetKeyDown(KeyCode.F) && ls._isPlayer == true))
         {
             check();
+            if(value % 2 ==0)
+            {
+                audioManager.PlaySfx(audioManager.lever1);
+            } else if(value % 2 !=0)
+            {
+                audioManager.PlaySfx(audioManager.lever2);
+            }
             value++;
+            
         }
         if(isMoving == true)
         {

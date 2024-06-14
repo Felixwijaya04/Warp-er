@@ -6,7 +6,6 @@ public class ChangeSprite_MPL : MonoBehaviour
 {
     public Sprite sp1, sp2;
     public MovingPlatform mp;
-
     private void Update()
     {
         if (mp.loc == false)

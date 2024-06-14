@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     [Header("Player Settings")]
     public float MovementSpeed = 10f;
     public float JumpPower = 13f;
+    public AudioClip walk;
     
     [Header("Player Info")]
     private float horizontal;
@@ -22,8 +23,16 @@ public class PlayerScript : MonoBehaviour
     
     [Header("Script Reference")]
     public GrabScript gs;
-
+    public AudioManager audioManager;
     public Animator animator;
+    AudioSource audioSource;
+
+    Rigidbody2D rb2d;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,8 +43,23 @@ public class PlayerScript : MonoBehaviour
 
             animator.SetFloat("Speed", Mathf.Abs(horizontal));
 
+            if (horizontal == 0)
+            {
+                /*Debug.Log(horizontal);*/
+                audioSource.Stop();
+            }
+            else if (horizontal != 0 && isJumping == false)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
+
+            }
+
             if (Input.GetKeyDown(KeyCode.W) && isDropping == false && isJumping == false)
             {
+                audioManager.PlaySfx(audioManager.jump);
                 rb.velocity = new Vector2(rb.velocity.x, JumpPower);
                 isJumping = true;
             }
@@ -95,10 +119,12 @@ public class PlayerScript : MonoBehaviour
     private void FixedUpdate()
     {
         walking(MovementSpeed);
+        
     }
     void walking(float speed)
     {
         rb.velocity = new Vector2(speed*horizontal,rb.velocity.y);
+        
     }
 
     void swap()
@@ -133,6 +159,10 @@ public class PlayerScript : MonoBehaviour
             isJumping = false;
         }
         if (other.gameObject.CompareTag("Platform"))
+        {
+            isJumping = false;
+        }
+        if (other.gameObject.CompareTag("SwappableObject"))
         {
             isJumping = false;
         }

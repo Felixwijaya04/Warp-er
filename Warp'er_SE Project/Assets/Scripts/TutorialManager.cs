@@ -8,12 +8,14 @@ public class TutorialManager : MonoBehaviour
     [Header("Every Panel",order = 0)]
     public GameObject MovementTUT;
     public GameObject JumpTUT;
+    public GameObject PickTUT;
     public GameObject PlatformTUT;
     public GameObject ThrowTUT;
     public GameObject TeleportTUT;
 
     [Header("Every Colliders", order = 1)]
     public GameObject JumpCollider;
+    public GameObject PickCollider;
     public GameObject PlatformCollider;
     public GameObject ThrowCollider;
 
@@ -47,6 +49,10 @@ public class TutorialManager : MonoBehaviour
         {
             TeleportTUT.SetActive(false) ;
         }
+        if(Input.GetMouseButtonDown(1) && PickTUT.activeSelf == true)
+        {
+            PickTUT .SetActive(false) ;
+        }
     }
 
     public void checkForStage(int stage)
@@ -56,8 +62,11 @@ public class TutorialManager : MonoBehaviour
             JumpTUT.SetActive(true);
         } else if(stage == 2)
         {
-            PlatformTUT.SetActive(true);
+            PickTUT.SetActive(true);
         } else if (stage == 3)
+        {
+            PlatformTUT.SetActive(true);
+        } else if(stage == 4)
         {
             ThrowTUT.SetActive(true);
         }

@@ -13,8 +13,12 @@ public class GrabScript : MonoBehaviour
     [SerializeField] Transform box;
     [SerializeField] Transform pendant;
     [SerializeField] float range;
-
+    public AudioManager audioManager;
     // Update is called once per frame
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Update()
     {
         float distance = Vector2.Distance(transform.position, box.position);
@@ -24,6 +28,7 @@ public class GrabScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) && isHolding == false)
             {
+                audioManager.PlaySfx(audioManager.grabPacket);
                 justGrabBox = true;
                 Invoke("delayGrab", 0.2f);
             }

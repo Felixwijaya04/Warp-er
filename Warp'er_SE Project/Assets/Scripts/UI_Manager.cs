@@ -15,6 +15,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject FinishMenu;
 
     public static int LevelStage = 0;
+    public GrabScript gs;
     public void Start()
     {
         Time.timeScale = 1.0f;
@@ -76,7 +77,7 @@ public class UI_Manager : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && gs.isHolding == true)
         {
             LevelFinish();
         }
