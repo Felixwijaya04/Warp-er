@@ -12,8 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     public AudioClip lever1;
     public AudioClip lever2;
-    public AudioClip teleport;
+    public AudioClip doorOpen;
     public AudioClip grabPacket;
+    public AudioClip ladder;
 
     private void Start()
     {

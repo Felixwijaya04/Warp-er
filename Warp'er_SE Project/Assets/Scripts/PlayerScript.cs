@@ -22,7 +22,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     private bool isGrounded = true;
     private bool Is_walksound = false;
-    
+    [SerializeField] public float FallingGravity;
+
     [Header("Script Reference")]
     public GrabScript gs;
     public AudioManager audioManager;
@@ -105,6 +106,16 @@ public class PlayerScript : MonoBehaviour
             {
                 MovementSpeed = 10f;
             }
+
+            if (rb.velocity.y < 0)
+            {
+                //rb.gravityScale = FallingGravity;
+                rb.velocity = new Vector2(rb.velocity.x/4,rb.velocity.y * FallingGravity);
+            }
+            else
+            {
+                rb.gravityScale = 1f;
+            }
         }
     }
 
@@ -165,7 +176,7 @@ public class PlayerScript : MonoBehaviour
     {
         Is_walksound = true;
         audioManager.PlaySfx(audioManager.walk);
-        yield return new WaitForSeconds(0.148f);
+        yield return new WaitForSeconds(0.149f);
         Is_walksound = false;
     }
 }

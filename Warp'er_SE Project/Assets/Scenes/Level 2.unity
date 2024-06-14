@@ -14415,7 +14415,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.1, y: -94, z: -10}
+  m_LocalPosition: {x: -34.93, y: -93.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14521,7 +14521,7 @@ Transform:
   m_GameObject: {fileID: 589511170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.1, y: -94, z: -10}
+  m_LocalPosition: {x: -34.93, y: -93.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17407,6 +17407,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   FinishMenu: {fileID: 820896544}
   gs: {fileID: 6855243555448851490}
+  audioManager: {fileID: 0}
 --- !u!61 &1792970860
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17538,6 +17539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3461869598107476479, guid: 33f466164b0dfe642a6a0395b764fa90, type: 3}
+      propertyPath: ladder
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e6173e7e624e9d41aa89c63a2e48637, type: 3}
     - target: {fileID: 4243405903472618058, guid: 33f466164b0dfe642a6a0395b764fa90, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -18080,11 +18085,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.1
+      value: -34.93
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -94
+      value: -93.77
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18118,6 +18123,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6873746531025679308, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 117192066}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

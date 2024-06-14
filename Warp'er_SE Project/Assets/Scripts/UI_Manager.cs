@@ -15,13 +15,18 @@ public class UI_Manager : MonoBehaviour
     public GameObject FinishMenu;
 
     public static int LevelStage = 0;
+    [Header("Script Ref")]
     public GrabScript gs;
+    public AudioManager audioManager;
+
+    private bool isWin = false;
     public void Start()
     {
         Time.timeScale = 1.0f;
     }
     private void Awake()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         // Ensure there's only one instance of UIManager
         if (instance == null)
         {
@@ -32,7 +37,7 @@ public class UI_Manager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == false)
+        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == false && isWin == true)
         {
             PauseMenu.gameObject.SetActive(true);
             pause();
@@ -79,6 +84,8 @@ public class UI_Manager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && gs.isHolding == true)
         {
+            isWin = true;
+            audioManager.PlaySfx(audioManager.doorOpen);
             LevelFinish();
         }
     }

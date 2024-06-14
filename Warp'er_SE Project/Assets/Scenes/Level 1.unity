@@ -300,6 +300,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3461869598107476479, guid: 33f466164b0dfe642a6a0395b764fa90, type: 3}
+      propertyPath: doorOpen
+      value: 
+      objectReference: {fileID: 8300000, guid: 794a7e3877663b743a8e3acc2973a05f, type: 3}
+    - target: {fileID: 3461869598107476479, guid: 33f466164b0dfe642a6a0395b764fa90, type: 3}
       propertyPath: grabPacket
       value: 
       objectReference: {fileID: 8300000, guid: f8c165cd8735fc642b4e7b7b5477db7b, type: 3}
@@ -454,6 +458,10 @@ PrefabInstance:
     - target: {fileID: 2324983766956329970, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970720726250697067, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -895,7 +903,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.33, y: -57.98, z: -10}
+  m_LocalPosition: {x: -11.06, y: -57.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1001,7 +1009,7 @@ Transform:
   m_GameObject: {fileID: 589511170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.33, y: -57.98, z: -10}
+  m_LocalPosition: {x: -11.06, y: -57.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1154,6 +1162,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   FinishMenu: {fileID: 160191905}
   gs: {fileID: 6855243555448851490}
+  audioManager: {fileID: 64554716}
 --- !u!1 &718588559
 GameObject:
   m_ObjectHideFlags: 0
@@ -13002,6 +13011,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1326268944246274836, guid: f6fc9245ef719924797e7e5c31c10c8e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326268944246274836, guid: f6fc9245ef719924797e7e5c31c10c8e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326268944246274836, guid: f6fc9245ef719924797e7e5c31c10c8e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3122527937062833314, guid: f6fc9245ef719924797e7e5c31c10c8e, type: 3}
       propertyPath: m_Name
       value: MovingDoor
@@ -13220,11 +13241,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.33
+      value: -11.06
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57.98
+      value: -57.74
       objectReference: {fileID: 0}
     - target: {fileID: 5625076781469859305, guid: 451c70f1b51c02644ab9204c95c2efdd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13295,11 +13316,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3545945389567764575, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.86
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 3545945389567764575, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -58.28
+      value: -57.25
       objectReference: {fileID: 0}
     - target: {fileID: 3545945389567764575, guid: 22fc51bee12ca8d4fb8d4bbec42409d1, type: 3}
       propertyPath: m_LocalPosition.z
