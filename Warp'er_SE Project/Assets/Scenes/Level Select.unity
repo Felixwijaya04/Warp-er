@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9524870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4376,6 +4376,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   FinishMenu: {fileID: 0}
   gs: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &803470024
 MonoBehaviour:
   m_ObjectHideFlags: 0

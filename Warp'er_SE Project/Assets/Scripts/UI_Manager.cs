@@ -37,7 +37,7 @@ public class UI_Manager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == false && isWin == true)
+        if(Input.GetKeyDown(KeyCode.Escape) && PauseMenu.activeSelf == false)
         {
             PauseMenu.gameObject.SetActive(true);
             pause();

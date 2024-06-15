@@ -1159,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d737c2331fdfea42b099dba2ae07610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseMenu: {fileID: 0}
+  PauseMenu: {fileID: 1829640464}
   FinishMenu: {fileID: 160191905}
   gs: {fileID: 6855243555448851490}
   audioManager: {fileID: 64554716}
@@ -12762,6 +12762,11 @@ Transform:
   - {fileID: 444667133}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1829640464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7816371500201913068, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
+  m_PrefabInstance: {fileID: 79857193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1858269566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5740597052788699606, guid: 19502f0a9242d764f860ad169089f179, type: 3}
