@@ -12168,6 +12168,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 0}
   FinishMenu: {fileID: 1982466037}
   gs: {fileID: 6855243555448851490}
+  audioManager: {fileID: 0}
 --- !u!61 &1471645033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15745,6 +15746,10 @@ PrefabInstance:
     - target: {fileID: 1038427995158896859, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507101873110613988, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 2324983766956329970, guid: c962c30c3ba4b3f41ab99af3f71c6f08, type: 3}
       propertyPath: m_Name

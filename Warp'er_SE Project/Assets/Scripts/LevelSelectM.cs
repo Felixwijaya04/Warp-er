@@ -6,7 +6,7 @@ public class LevelSelectM : MonoBehaviour
 {
     [Header("Script Ref")]
     public UI_Manager manager;
-    public int stage;
+    public int stage = 0;
 
     [Header("Object Ref")]
     public GameObject Tutor;
