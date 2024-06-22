@@ -1,1 +1,1 @@
-Link Itch.io : https://felixde-cat.itch.io/warper
+Download game here : https://felixde-cat.itch.io/warper
