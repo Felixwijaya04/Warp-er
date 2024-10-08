@@ -11,3 +11,6 @@ Download game here : [Download Here!](https://felixde-cat.itch.io/warper)
 <br>
 
 ## 🔥Development Process
+- **Environment** <br> The game was built in built-in render pipeline. We create the level design using unity tilemap system to ensure that every tile is placed in the correct grids. Then we create a parallax background effect to add an illusion depth in 2D scene. The parallax works by seperating background image to several different layers then move it following the current player position. The movement between layers are delayed by a short time for this to works.
+- **Grab Mechanic** <br> One of the main game mechanic in the game is player is able to grab 2 object simultaneously. It works by setting the object in hold into a specific position.
+![image](https://github.com/Felixwijaya04/Warp-er/blob/main/images/Screenshot%202024-10-08%20223641.png)
