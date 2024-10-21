@@ -3,6 +3,26 @@ Warp'er is a 2D puzzle platformer game. In this game, players take on the role o
 
 You, control Mel as a package courier whose job is to deliver packages to several places. Of course, there is not only a straight road in front of you. There are many obstacles that must be solved to open the way to the destination, it's your job to do it. Let's help Mel become the best of the best in her city.
 
+## 📋 Project Info
+
+<b> Developed with Unity 2022 </b>
+
+| **Role** | **Name** | **Development Time** 
+|:-|:-|:-|
+| Team Manager | Steven Putra Adicandra | 4 months |
+| Game Designer | Kelvin | 4 months |
+| Game Programmer | Felix Wijaya | 4 months |
+| Audio Designer | Michael Ardisa | 4 months |
+| 2D Visual Artist | Crescentia Karen Prasetya | 4 months |
+<details>
+  <summary> <b>My Contribution (Game Programmer)</b> </summary>
+  
+  - Implement game mechanics
+  - Level design
+  - UI navigation
+  - Audio programming
+  
+</details>
 <br>
 
 ## 🕹️Download Game
